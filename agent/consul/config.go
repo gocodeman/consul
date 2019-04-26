@@ -383,6 +383,8 @@ type Config struct {
 	AutoEncryptTLS bool
 }
 
+// ToTLSUtilConfig is only used by tests, usually the config is being passed
+// down from the agent.
 func (c *Config) ToTLSUtilConfig() tlsutil.Config {
 	return tlsutil.Config{
 		VerifyIncoming:           c.VerifyIncoming,

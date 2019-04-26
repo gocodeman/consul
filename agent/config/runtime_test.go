@@ -3008,8 +3008,7 @@ func TestFullConfig(t *testing.T) {
 			"check_update_interval": "16507s",
 			"client_addr": "93.83.18.19",
 			"auto_encrypt": {
-				"tls": true,
-				"gossip": true
+				"tls": true
 			},
 			"connect": {
 				"ca_provider": "consul",
@@ -3565,7 +3564,6 @@ func TestFullConfig(t *testing.T) {
 			client_addr = "93.83.18.19"
 			auto_encrypt = {
 				tls = true
-				gossip = true
 			}
 			connect {
 				ca_provider = "consul"
