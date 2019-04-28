@@ -583,8 +583,9 @@ func (b *Builder) Build() (rt RuntimeConfig, err error) {
 	}
 
 	autoEncryptTLS := b.boolVal(c.AutoEncrypt.TLS)
+	autoEncryptAllowTLS := b.boolVal(c.AutoEncrypt.AllowTLS)
 
-	if autoEncryptTLS {
+	if autoEncryptTLS || autoEncryptAllowTLS {
 		connectEnabled = true
 	}
 
@@ -774,6 +775,7 @@ func (b *Builder) Build() (rt RuntimeConfig, err error) {
 		Checks:                                  checks,
 		ClientAddrs:                             clientAddrs,
 		AutoEncryptTLS:                          autoEncryptTLS,
+		AutoEncryptAllowTLS:                     autoEncryptAllowTLS,
 		ConnectEnabled:                          connectEnabled,
 		ConnectCAProvider:                       connectCAProvider,
 		ConnectCAConfig:                         connectCAConfig,
